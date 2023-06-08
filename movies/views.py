@@ -13,11 +13,11 @@ def hello_api_view(request):
 
 @api_view(['GET'])
 def movie_list_api_view(request):
-    movies = Movie.objects.all()
+    movies = Movie.objects.all()  # data from DB
 
-    data = MovieSerializer(movies, many=True).data
+    data = MovieSerializer(movies, many=True).data  # reformat data fo dict
 
-    return Response(data=data, status=status.HTTP_200_OK)
+    return Response(data=data, status=status.HTTP_200_OK)  # return data
 
 
 @api_view(['GET'])
