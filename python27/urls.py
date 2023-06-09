@@ -18,12 +18,12 @@ from django.contrib import admin
 from django.urls import path
 from django.conf.urls.static import static
 from python27 import settings
-from movies.views import hello_api_view, movie_list_api_view, movie_retrieve_api_view
+from movies.views import hello_api_view, movie_list_create_api_view, movie_retrieve_api_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('hello/', hello_api_view),
-    path('api/movies/', movie_list_api_view),
+    path('api/movies/', movie_list_create_api_view),
     path('api/movies/<int:id>/', movie_retrieve_api_view)
 ]
 
