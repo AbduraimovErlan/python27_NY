@@ -14,6 +14,7 @@ def hello_api_view(request):
 
 @api_view(['GET', 'POST'])
 def movie_list_create_api_view(request):
+    print(request.user)
     if request.method == 'GET':
         movies = Movie.objects.all()  # data from DB
 
